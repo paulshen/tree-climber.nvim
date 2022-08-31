@@ -105,10 +105,6 @@ local function find_next_nontrivial_parent(node, parser, options)
     return find_next_nontrivial_parent(subroot, subparser, options)
   end
 
-  if #children == 1 then
-    return find_next_nontrivial_parent(children[1], parser, options)
-  end
-
   return node, parser
 end
 
