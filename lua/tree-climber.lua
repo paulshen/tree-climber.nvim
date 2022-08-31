@@ -121,7 +121,7 @@ local function locate_node(path, parser, cursor, level, options)
       table.insert(path, node)
 
       if same_start(node, cursor) then
-        if level == 0 then
+        if (options and options.parent_always_move) or level == 0 then
           return path, parser
         else
           return locate_node(path, parser, cursor, level - 1, options)
